@@ -1,4 +1,4 @@
-:: *||* means set you own Directories
+:: *||* fill in your Windows-User
 
 @echo off
 for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
