@@ -9,11 +9,8 @@ set Drive=%~d0
 set zipSource=%Drive%\Backups
 set zipDest=%Drive%\Backups
 
-CD /d %zipSource%\%datestamp%
-for %%X in (*) do "C:\Program Files\7-Zip\7z.exe" a "%zipDest%\%datestamp%.zip" "%%X"
-for /d %%X in (*) do "C:\Program Files\7-Zip\7z.exe" a "%zipDest%\%datestamp%.zip" "%%X"
+"C:\Program Files\7-Zip\7z.exe" a %zipSource%\%datestamp%.zip %zipDest%\%datestamp%
 
-CD..
 FORFILES /P "%zipSource%" /M * /C "cmd /c rd %datestamp% /S /Q"
 
 CALL cleanup.bat
