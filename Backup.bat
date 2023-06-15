@@ -16,10 +16,10 @@ set backupDest=%Drive%\Backups\
 
 
 :: copy C:\user\
-robocopy "%backupSourceUsrDir%\Documents" "%backupDest%\%datestamp%\C\users\user\Documents" /E /xd %exceptions% /tee /log+:%logDir%\%datestamp%.txt
-robocopy "%backupSourceUsrDir%\Music" "%backupDest%\%datestamp%\C\users\user\Music" /E /tee /log+:%logDir%\%datestamp%.txt
-robocopy "%backupSourceUsrDir%\Pictures" "%backupDest%\%datestamp%\C\users\user\Pictures" /E /tee /log+:%logDir%\%datestamp%.txt
-robocopy "%backupSourceUsrDir%\Videos" "%backupDest%\%datestamp%\C\users\user\Videos" /E /tee /log+:%logDir%\%datestamp%.txt
-robocopy "%backupSourceUsrDir%\Desktop" "%backupDest%\%datestamp%\C\users\user\Desktop" /E /tee /log+:%logDir%\%datestamp%.txt
+robocopy "%backupSourceUsrDir%\Documents" "%backupDest%\%datestamp%\C\users\*||*\Documents" /E /xd %exceptions% /tee /log+:%logDir%\%datestamp%.txt
+robocopy "%backupSourceUsrDir%\Music" "%backupDest%\%datestamp%\C\users\*||*\Music" /E /tee /log+:%logDir%\%datestamp%.txt
+robocopy "%backupSourceUsrDir%\Pictures" "%backupDest%\%datestamp%\C\users\*||*\Pictures" /E /tee /log+:%logDir%\%datestamp%.txt
+robocopy "%backupSourceUsrDir%\Videos" "%backupDest%\%datestamp%\C\users\*||*\Videos" /E /tee /log+:%logDir%\%datestamp%.txt
+robocopy "%backupSourceUsrDir%\Desktop" "%backupDest%\%datestamp%\C\users\*||*\Desktop" /E /tee /log+:%logDir%\%datestamp%.txt
 
 CALL zip.bat
